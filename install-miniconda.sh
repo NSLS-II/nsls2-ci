@@ -5,7 +5,7 @@ bash ~/miniconda.sh -b -p ~/mc
 PATH=~/mc/bin:$PATH
 # export conda into travis environment
 echo "export PATH=~/mc/bin:$PATH" >> ~/.bashrc
-echo "export CONDA_BUILD_COMMAND="conda-build conda-recipe --python=$TRAVIS_PYTHON_VERSION" >> ~/.bashrc
+echo "export CONDA_BUILD_COMMAND='conda-build conda-recipe --python=$TRAVIS_PYTHON_VERSION'" >> ~/.bashrc
 # install packages required for building and uploading
 conda install --yes anaconda-client
 # fetch a custom condarc for building and uploading to anaconda.org.
