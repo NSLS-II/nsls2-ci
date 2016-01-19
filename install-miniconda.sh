@@ -1,7 +1,7 @@
 #!/bin/sh
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p ~/mc
-cat "export PATH=~/mc/bin:$PATH" >> ~/.bashrc
+echo "export PATH=~/mc/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 # install packages required for building and uploading
 conda install --yes anaconda-client
