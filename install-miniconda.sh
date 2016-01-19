@@ -2,10 +2,12 @@
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p ~/mc
 # export conda into script environment
-PATH=~/mc/bin:$PATH
+# PATH=~/mc/bin:$PATH
+export PATH=~/mc/bin:$PATH
+export CONDA_BUILD_COMMAND='conda-build conda-recipe --python=$TRAVIS_PYTHON_VERSION'
 # export conda into travis environment
-echo "export PATH=~/mc/bin:$PATH" >> ~/.bashrc
-echo "export CONDA_BUILD_COMMAND='conda-build conda-recipe --python=$TRAVIS_PYTHON_VERSION'" >> ~/.bashrc
+# echo "export PATH=~/mc/bin:$PATH" >> ~/.bashrc
+# echo "export CONDA_BUILD_COMMAND='conda-build conda-recipe --python=$TRAVIS_PYTHON_VERSION'" >> ~/.bashrc
 # install packages required for building and uploading
 conda install --yes anaconda-client
 # fetch a custom condarc for building and uploading to anaconda.org.
