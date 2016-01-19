@@ -2,7 +2,7 @@
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p ~/mc
 # export conda into script environment
-export PATH=~/mc/bin:$PATH
+PATH=~/mc/bin:$PATH
 # export conda into travis environment
 echo "export PATH=~/mc/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
