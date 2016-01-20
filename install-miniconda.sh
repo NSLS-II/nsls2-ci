@@ -8,5 +8,5 @@ export CONDA_BUILD_COMMAND="conda-build conda-recipe --python=$TRAVIS_PYTHON_VER
 conda install --yes anaconda-client conda-build=1.18.1
 # make a condarc for easier conda uploading and operation on travis
 ls
-wget https://gist.githubusercontent.com/ericdill/raw/condarc
+wget https://gist.githubusercontent.com/ericdill/613e015ad558b9149d33/raw/condarc
 mv condarc ~/.condarc
