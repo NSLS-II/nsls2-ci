@@ -7,10 +7,5 @@ export CONDA_BUILD_COMMAND="conda-build conda-recipe --python=$TRAVIS_PYTHON_VER
 # install packages required for building and uploading. Install 1.18.1 for now because GIT_DESCRIBE is broken on 1.18.2
 conda install --yes anaconda-client conda-build=1.18.1
 # make a condarc for easier conda uploading and operation on travis
-echo "always_yes: true
-show_channel_urls: True
-channels:
-- lightsource2
-- conda-forge
-- scikit-xray
-- defaults" > ~/.condarc
+wget https://gist.githubusercontent.com/ericdill/raw/condarc
+mv condarc ~/.condarc
