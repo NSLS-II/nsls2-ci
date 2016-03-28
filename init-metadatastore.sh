@@ -1,7 +1,7 @@
 #!/bin/sh
-export FS_HOST=localhost
-export FS_DATABASE=test
-mkdir -p ~/.config/filestore
+export MDS_HOST=localhost
+export MDS_DATABASE=mds-test
+mkdir -p ~/.config/metadatastore
 ls ~/.config
-ls ~/.config/filestore
-echo "port: 27017" > ~/.config/filestore/connection.yml
+ls ~/.config/metadatastore
+echo "port: 27017" > ~/.config/metadatastore/connection.yml
