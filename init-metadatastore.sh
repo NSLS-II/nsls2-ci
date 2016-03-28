@@ -1,6 +1,6 @@
 #!/bin/sh
 export FS_HOST=localhost
-export FS_DATABASE=fs-test
+export FS_DATABASE=test
 mkdir -p ~/.config/filestore
 ls ~/.config
 ls ~/.config/filestore
