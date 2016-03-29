@@ -10,7 +10,8 @@ conda install --yes anaconda-client conda-build=1.18.1
 echo "always_yes: true
 show_channel_urls: True
 channels:
-- lightsource2
+- defaults
 - conda-forge
 - scikit-xray
-- defaults" > ~/.condarc
+- lightsource2
+" > ~/.condarc
