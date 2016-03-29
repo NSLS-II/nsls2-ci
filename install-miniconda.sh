@@ -11,7 +11,7 @@ echo "always_yes: true
 show_channel_urls: True
 channels:
 - defaults
-# - conda-forge
+- conda-forge
 - scikit-xray
 - lightsource2
 " > ~/.condarc
