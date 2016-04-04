@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-source activate doc-build
+source activate $CONDA_ENV_NAME
 
 make clean
 make html
