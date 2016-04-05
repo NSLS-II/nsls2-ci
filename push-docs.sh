@@ -1,13 +1,15 @@
 #!/bin/bash
-# early exit if we are not on
-if [[ $TRAVIS_BRANCH != 'auto-build' ]] || [[ $TRAVIS_PULL_REQUEST != 'false' ]]; then
+# early exit if we are not in the right part of the matrix
+if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
+   [[ $TRAVIS_PULL_REQUEST != 'false' ]] || \
+   [[ $BUILD_DOCS == 'true' ]]; then
   echo "
-    This script is not going to push the docs because you are the
+    This script is not going to push the docs because you are on the
 
         $TRAVIS_BRANCH
 
-    branch (You need to be on master to push) or this travis script is being
-    run on a pull request
+    branch (You need to be on $BUILD_DOCS_BRANCH to push) or this travis
+    script is being run on a pull request
 
         $TRAVIS_PULL_REQUEST
 
@@ -16,8 +18,9 @@ if [[ $TRAVIS_BRANCH != 'auto-build' ]] || [[ $TRAVIS_PULL_REQUEST != 'false' ]]
 
         ${GH_REF}
 "
-  exit 1
+  exit 0
 fi
+
 set -e # exit with nonzero exit code if anything fails
 base=docs/`basename $TRAVIS_REPO_SLUG`
 # prepend base with 'docs/' if it is not the parent repo
