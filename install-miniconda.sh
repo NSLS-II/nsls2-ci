@@ -4,14 +4,16 @@ bash ~/miniconda.sh -b -p ~/mc
 # export conda into script environment
 export PATH=~/mc/bin:$PATH
 export CONDA_BUILD_COMMAND="conda-build conda-recipe --python=$TRAVIS_PYTHON_VERSION"
-# install packages required for building and uploading. Install 1.18.1 for now because GIT_DESCRIBE is broken on 1.18.2
-conda install --yes anaconda-client conda-build=1.18.1
-# make a condarc for easier conda uploading and operation on travis
-echo "always_yes: true
+# make a condarc for easier conda operation on travis
+echo "
+always_yes: true
 show_channel_urls: True
+track_features: nomkl
 channels:
 - defaults
 - conda-forge
 - scikit-xray
 - lightsource2
 " > ~/.condarc
+# update conda to the latest version
+conda update conda
