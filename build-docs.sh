@@ -18,14 +18,13 @@ if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
 
         ${GH_REF}
 "
-  exit 0
+else
+  set -e # exit with nonzero exit code if anything fails
+
+  source activate $CONDA_ENV_NAME
+
+  make clean
+  make html
+
+  source deactivate
 fi
-
-set -e # exit with nonzero exit code if anything fails
-
-source activate $CONDA_ENV_NAME
-
-make clean
-make html
-
-source deactivate
