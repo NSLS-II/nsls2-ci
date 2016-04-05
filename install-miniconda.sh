@@ -8,12 +8,14 @@ export CONDA_BUILD_COMMAND="conda-build conda-recipe --python=$TRAVIS_PYTHON_VER
 echo "
 always_yes: true
 show_channel_urls: True
-track_features: nomkl
+track_features:
+- nomkl
 channels:
-- defaults
-- conda-forge
-- scikit-xray
+- lightsource2-dev
 - lightsource2
+- scikit-xray
+- conda-forge
+- defaults
 " > ~/.condarc
 # update conda to the latest version
 conda update conda
