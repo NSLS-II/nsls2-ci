@@ -8,7 +8,7 @@ conda create -n $CONDA_ENV_NAME python=$TRAVIS_PYTHON_VERSION sphinx numpydoc pi
 source activate $CONDA_ENV_NAME
 pip install sphinx_bootstrap_theme sphinxcontrib-napoleon
 # deactivate the environment after we're done
-cd $DOCS_DIR
-ls
-make html -C $DOCS_DIR
+pushd $DOCS_DIR
+make html
+popd
 source deactivate

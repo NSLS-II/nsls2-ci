@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # early exit if we are not in the right part of the matrix
 if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
    [[ $TRAVIS_PULL_REQUEST != 'false' ]] || \
@@ -24,7 +25,6 @@ if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
         ${GH_REF}
 "
 else
-  . make-docs-env.sh
-  . build-docs.sh
+  . make-docs.sh
   . push-docs.sh
 fi;
