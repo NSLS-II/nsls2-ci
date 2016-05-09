@@ -6,15 +6,20 @@ if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
   echo "
     This script is not going to push the docs because you are on the
 
-        $TRAVIS_BRANCH
+        TRAVIS_BRANCH=$TRAVIS_BRANCH
+        BUILD_DOCS_BRANCH=$BUILD_DOCS_BRANCH
 
     branch (You need to be on $BUILD_DOCS_BRANCH to push) or this travis
     script is being run on a pull request
 
         TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
 
-    If either of those two conditions are not true, then this travis script
-    will not push to
+    or BUILD_DOCS is set to false
+
+        BUILD_DOCS=$BUILD_DOCS
+
+    If any of those conditions are not true, then this travis script
+    will not build the docs
 
         ${GH_REF}
 "
