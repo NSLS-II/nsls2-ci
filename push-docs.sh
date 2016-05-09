@@ -1,5 +1,7 @@
 #!/bin/bash
 : "${GH_TOKEN:?GH_TOKEN not set. Cannot push to github}"
+: "${HTML_DIR:?HTML_DIR not set. Do not know where to go to get the built docs}"
+
 echo $TRAVIS_REPO_SLUG
 base=docs/`basename $TRAVIS_REPO_SLUG`
 echo $base
