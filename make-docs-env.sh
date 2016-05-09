@@ -7,5 +7,6 @@ source activate $CONDA_ENV_NAME
 pip install sphinx_bootstrap_theme sphinxcontrib-napoleon
 # deactivate the environment after we're done
 cd $DOCS_DIR
+ls
 make html
 source deactivate
