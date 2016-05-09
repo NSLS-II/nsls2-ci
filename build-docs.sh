@@ -11,7 +11,7 @@ if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
     branch (You need to be on $BUILD_DOCS_BRANCH to push) or this travis
     script is being run on a pull request
 
-        $TRAVIS_PULL_REQUEST
+        TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
 
     If either of those two conditions are not true, then this travis script
     will not push to
@@ -20,11 +20,5 @@ if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
 "
 else
   set -e # exit with nonzero exit code if anything fails
-
-  source activate $CONDA_ENV_NAME
-
-  make clean
-  make html
-
-  source deactivate
+  docker run -v $DOCS_DIR:/host/docs ericdill/docs-builder:latest
 fi
