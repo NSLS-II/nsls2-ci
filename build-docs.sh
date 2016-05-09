@@ -2,7 +2,7 @@
 # early exit if we are not in the right part of the matrix
 if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
    [[ $TRAVIS_PULL_REQUEST != 'false' ]] || \
-   [[ $BUILD_DOCS == 'true' ]]; then
+   [[ $BUILD_DOCS == 'false' ]]; then
   echo "
     This script is not going to push the docs because you are on the
 
