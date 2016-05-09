@@ -24,7 +24,7 @@ if [[ $TRAVIS_BRANCH != $BUILD_DOCS_BRANCH ]] || \
         ${GH_REF}
 "
 else
-  source make-docs-env.sh
-  source build-docs.sh
-  source push-docs.sh
+  . make-docs-env.sh
+  . build-docs.sh
+  . push-docs.sh
 fi;
