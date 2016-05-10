@@ -10,6 +10,7 @@ echo $base
 if [ $base != 'docs' ]; then
   base="";
 fi;
+echo "base=$base"
 CLONE_DIR="/tmp/docs"
 rm -rf $CLONE_DIR
 echo "cloning to $CLONE_DIR"
