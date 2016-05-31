@@ -34,7 +34,7 @@ git config --global user.email $GIT_EMAIL
 message "cloning to $CLONE_DIR"
 git clone "https://{GH_TOKEN}@${GH_REF}" $CLONE_DIR
 
-message "copying contents of $CLONEDIR/$base to $HTML_DIR"
+message "copying contents of CLONE_DIR/base=$CLONE_DIR/$base to HTML_DIR=$HTML_DIR"
 cp -rv $HTML_DIR* $CLONE_DIR/$base
 
 message "pushd-ing to CLONE_DIR=$CLONE_DIR"

@@ -10,7 +10,7 @@ message "Setting the conda environment name"
 export CONDA_ENV_NAME=doc-build
 
 message "Creating the conda environment for building docs"
-conda create -n $CONDA_ENV_NAME python=$TRAVIS_PYTHON_VERSION sphinx numpydoc pip jsonschema ipython matplotlib
+conda create -n $CONDA_ENV_NAME python=3.5 sphinx numpydoc pip jsonschema ipython matplotlib
 
 message "activating the sphinx build environment"
 source activate $CONDA_ENV_NAME
