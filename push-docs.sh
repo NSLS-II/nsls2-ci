@@ -10,10 +10,11 @@ message () {
 }
 
 message "TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG"
-base=docs/`basename $TRAVIS_REPO_SLUG`
+base=`basename $TRAVIS_REPO_SLUG`
 
-# prepend base with 'docs/' if it is not the parent repo
-if [ $base != 'docs' ]; then
+# If the basename is `docs`, then we are in the root repo. We should copy everything
+# into the root of the repo
+if [ $base == 'docs' ]; then
   base="";
 fi;
 message "base=$base"
@@ -25,11 +26,11 @@ message "removing CLONE_DIR=$CLONE_DIR"
 rm -rf $CLONE_DIR
 
 # inside this git repo we'll pretend to be a new user
-GIT_EMAIL="travis@nomail"
-GIT_USERNAME="Travis CI"
-message "setting gitconfig information to GIT_USERNAME=$GIT_USERNAME and GIT_EMAIL=$GIT_EMAIL"
-git config --global user.name $GIT_USERNAME
-git config --global user.email $GIT_EMAIL
+# GIT_EMAIL="travis@nomail"
+# GIT_USERNAME="Travis CI"
+# message "setting gitconfig information to GIT_USERNAME=$GIT_USERNAME and GIT_EMAIL=$GIT_EMAIL"
+# git config --global user.name $GIT_USERNAME
+# git config --global user.email $GIT_EMAIL
 
 message "cloning to $CLONE_DIR"
 git clone "https://{GH_TOKEN}@${GH_REF}" $CLONE_DIR
