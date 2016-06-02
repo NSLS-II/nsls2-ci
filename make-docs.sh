@@ -19,8 +19,8 @@ conda install sphinx numpydoc pip jsonschema ipython matplotlib $DOCS_CONDA_DEPS
 message "Installing pip dependencies for building the docs"
 pip install sphinx_rtd_theme sphinxcontrib-napoleon $DOCS_PIP_DEPS
 
-message "pushd'ing into $TRAVIS_BUILD_DIR/`basename $TRAVIS_REPO_SLUG`/$DOCS_SOURCE_SUBDIR"
-pushd $TRAIVS_BUILD_DIR/`basename $TRAVIS_REPO_SLUG`/$DOCS_SOURCE_SUBDIR
+message "pushd'ing into $TRAVIS_BUILD_DIR/$DOCS_SUBDIR"
+pushd $TRAIVS_BUILD_DIR/$DOCS_SUBDIR
 
 message "Making the docs with 'make html'"
 make clean
