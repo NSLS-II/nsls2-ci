@@ -1,5 +1,5 @@
 #!/bin/bash
-: "${DOCS_DIR:?DOCS_DIR not set. Do not know where to go to build the docs}"
+: "${DOCS_SOURCE_SUBDIR:?DOCS_SOURCE_SUBDIR not set. Do not know where to go to build the docs}"
 
 message () {
   echo "
@@ -19,8 +19,8 @@ conda install sphinx numpydoc pip jsonschema ipython matplotlib $DOCS_CONDA_DEPS
 message "Installing pip dependencies for building the docs"
 pip install sphinx_rtd_theme sphinxcontrib-napoleon $DOCS_PIP_DEPS
 
-message "pushd'ing into DOCS_DIR=$DOCS_DIR"
-pushd $DOCS_DIR
+message "pushd'ing into DOCS_SOURCE_SUBDIR=$DOCS_SOURCE_SUBDIR"
+pushd $TRAIVS_BUILD_DIR/$DOCS_SOURCE_SUBDIR
 
 message "Making the docs with 'make html'"
 make clean
