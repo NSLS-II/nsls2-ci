@@ -1,5 +1,5 @@
 #!/bin/bash
-: "${DOCS_SOURCE_SUBDIR:?DOCS_SOURCE_SUBDIR not set. Do not know where to go to build the docs}"
+: "${DOCS_SUBDIR:?DOCS_SUBDIR not set. Do not know where to go to build the docs}"
 
 message () {
   echo "
