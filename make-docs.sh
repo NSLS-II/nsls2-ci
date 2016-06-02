@@ -11,7 +11,7 @@ message () {
 
 # message "Creating the conda environment for building docs"
 message "Installing conda dependencies to build the docs"
-conda install -c lightsource2 sphinx numpydoc pip jsonschema ipython matplotlib $DOCS_CONDA_DEPS
+conda install sphinx numpydoc pip jsonschema ipython matplotlib $DOCS_CONDA_DEPS
 
 # message "activating the sphinx build environment"
 # source activate $CONDA_ENV_NAME
