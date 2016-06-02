@@ -17,7 +17,7 @@ conda install -c lightsource2 sphinx numpydoc pip jsonschema ipython matplotlib 
 # source activate $CONDA_ENV_NAME
 
 message "Installing pip dependencies for building the docs"
-pip install sphinx_bootstrap_theme sphinxcontrib-napoleon $DOCS_PIP_DEPS
+pip install sphinx_rtd_theme sphinxcontrib-napoleon $DOCS_PIP_DEPS
 
 message "pushd'ing into DOCS_DIR=$DOCS_DIR"
 pushd $DOCS_DIR
