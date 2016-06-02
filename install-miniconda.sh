@@ -16,4 +16,6 @@ channels:
 - defaults
 " > ~/.condarc
 # update conda to the latest version
+echo $PATH
+ls ~/miniconda/bin
 conda update conda
