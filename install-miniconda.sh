@@ -13,7 +13,7 @@ track_features:
 channels:
 - lightsource2-dev
 - lightsource2
-- scikit-xray
+- conda-forge
 - defaults
 " > ~/.condarc
 # update conda to the latest version
