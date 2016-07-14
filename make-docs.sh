@@ -21,8 +21,10 @@ pip install sphinx_rtd_theme sphinxcontrib-napoleon $DOCS_PIP_DEPS
 
 message "TRAVIS_BUILD_DIR=$TRAVIS_BUILD_DIR"
 message "DOCS_SUBDIR=$DOCS_SUBDIR"
+pwd
 message "pushd'ing into $TRAVIS_BUILD_DIR/$DOCS_SUBDIR"
-# pushd $TRAIVS_BUILD_DIR/$DOCS_SUBDIR
+pushd ${TRAIVS_BUILD_DIR}/${DOCS_SUBDIR}
+pwd
 
 message "Making the docs with 'make html'"
 ls
