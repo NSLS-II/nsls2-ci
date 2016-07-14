@@ -25,6 +25,7 @@ message "pushd'ing into $TRAVIS_BUILD_DIR/$DOCS_SUBDIR"
 pushd $TRAIVS_BUILD_DIR/$DOCS_SUBDIR
 
 message "Making the docs with 'make html'"
+ls
 make clean
 make html
 
