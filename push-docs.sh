@@ -28,7 +28,7 @@ message "checking out --ophan temp_branch"
 git checkout --orphan temp_branch
 
 message "copying contents of $TRAVIS_BUILD_DIR/$HTML_SUBDIR to $CLONE_DIR/$TARGET_DEV_SUBDIR"
-rsync -r $TRAVIS_BUILD_DIR/$HTML_SUBDIR/* $CLONE_DIR/$TARGET_DEV_SUBDIR
+rsync -r $TRAVIS_BUILD_DIR/$DOCS_SUBDIR/$HTML_SUBDIR/* $CLONE_DIR/$TARGET_DEV_SUBDIR
 
 message "checking whether this is a tagged release"
 if [ -n "$TRAVIS_TAG" ]; then
