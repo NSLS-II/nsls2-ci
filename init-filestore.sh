@@ -10,4 +10,3 @@ ls ~/.config/filestore
 echo "port: 27017" > ~/.config/filestore/connection.yml
 echo "mongo_user: tom" > ~/.config/filestore/connection.yml
 echo "mongo_pwd: jerry" > ~/.config/filestore/connection.yml
-~
