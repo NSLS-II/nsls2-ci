@@ -7,6 +7,7 @@ export FS_MONGO_PWD=jerry
 mkdir -p ~/.config/filestore
 ls ~/.config
 ls ~/.config/filestore
+echo "host: localhost" > ~/.config/filestore/connection.yml
 echo "port: 27017" > ~/.config/filestore/connection.yml
 echo "mongo_user: tom" > ~/.config/filestore/connection.yml
 echo "mongo_pwd: jerry" > ~/.config/filestore/connection.yml
