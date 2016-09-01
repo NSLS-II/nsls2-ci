@@ -31,6 +31,7 @@ message "fetching tags"
 git fetch origin --tags
 
 message "copying contents of $TRAVIS_BUILD_DIR/$DOCS_SUBDIR/$HTML_SUBDIR to $CLONE_DIR/$TARGET_DEV_SUBDIR"
+mkdir -p $CLONE_DIR/$TARGET_DEV_SUBDIR
 rsync -r $TRAVIS_BUILD_DIR/$DOCS_SUBDIR/$HTML_SUBDIR/* $CLONE_DIR/$TARGET_DEV_SUBDIR
 
 message "checking whether this is a tagged release"
