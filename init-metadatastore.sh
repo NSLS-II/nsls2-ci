@@ -9,6 +9,6 @@ mkdir -p ~/.config/metadatastore
 ls ~/.config
 ls ~/.config/metadatastore
 echo "host: localhost" > ~/.config/metadatastore/connection.yml
-echo "port: 27017" > ~/.config/metadatastore/connection.yml
-echo "mongo_user: tom" > ~/.config/metadatastore/connection.yml
-echo "mongo_pwd: jerry" > ~/.config/metadatastore/connection.yml
+echo "port: 27017" >> ~/.config/metadatastore/connection.yml
+echo "mongo_user: tom" >> ~/.config/metadatastore/connection.yml
+echo "mongo_pwd: jerry" >> ~/.config/metadatastore/connection.yml
