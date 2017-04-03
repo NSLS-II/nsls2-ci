@@ -30,9 +30,9 @@ message "Making the docs with 'make html'"
 ls
 make clean
 make html
-
+ret=$?
 message "Returning to previous directory"
 popd
-
+return $ret
 # message "deactivating the conda environment"
 # source deactivate
