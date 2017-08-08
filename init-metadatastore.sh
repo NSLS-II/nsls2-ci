@@ -1,7 +1,7 @@
 #!/bin/sh
 export MDS_HOST=localhost
 export MDS_DATABASE=mds-test
-export MDS_TIMEZONE=US/Eastern
+export MDS_TIMEZONE=Europe/Berlin
 export MDS_MONGO_USER=tom
 export MDS_MONGO_PWD=jerry
 export MDS_PORT=27017
